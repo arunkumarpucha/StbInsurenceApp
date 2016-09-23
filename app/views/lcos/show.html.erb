@@ -1,0 +1,37 @@
+<h1>Lcos#show</h1>
+<p>Find me in app/views/lcos/show.html.erb</p>
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<h4 class="text-right"><%=link_to 'create subscriber',new_lco_subscriber_path(@lco.id) %></h4>
+
+		<table class="table table-bordered">
+			<tr>
+				<th>NAME</th>
+				<th>EMAIL_ID</th>
+				<th>MOBILE_NO</th>
+				<th>LCO_NAME</th>
+				<th>INSURENCE</th>
+			</tr>
+			
+				<% @subscribers.each do |subscriber| %>
+			<tr>
+				<td><%=subscriber.name %> </td>
+				<td><%=subscriber.email_id %> </td>
+				<td><%=subscriber.mobile_no %> </td>
+				<td><%=@lco.lco_name %> </td>
+				<% if subscriber.insurences.present? %>
+<td><%=link_to 'Applied',subscriber_insurence_path(subscriber,subscriber.insurences.each do |a| a.id end),
+	class: 'btn btn-success' %></td>
+          <%else %>
+			<td><%=link_to 'Apply',new_subscriber_insurence_path(subscriber),class: 'btn btn-danger' %></td>
+			<%end%>
+			<td> <%= link_to 'Delete',lco_subscriber_path(@lco,subscriber),method: 'delete' %>  </td>
+
+			</tr>
+
+			
+				<% end %>
+
+			</table>
+	</div>
+</div>

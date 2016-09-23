@@ -1,0 +1,37 @@
+<h1>Insurence#show</h1>
+<p>Find me in app/views/lcos/show.html.erb</p>
+<div class="container">
+	<div class="col-md-10 col-md-offset-1">
+		<center>
+    <h1>INSURENCE DETAILS OF THE SUBSCRIBER</h1></hr>
+        </center>
+		<table class="table table-bordered">
+			<tr>
+				<th>SUBSCRIBER_NAME</th>
+				<th>SUBSCRIBER_PHONE</th>
+				<th>SUBSCRIBER_EMAIL</th>
+				<th>INSURED_STB_NO</th>
+				<th>INSURENCE_AMOUNT</th>
+				<th>INSURENCE_DATE</th>
+				<th>INSURENCE_FOR</th>
+				
+			</tr>
+			
+				
+			<tr>
+				<td><%=@subscriber.name %> </td>
+				<td><%=@subscriber.mobile_no %> </td>
+				<td><%=@subscriber.email_id %> </td>
+				<td><%=@stb.stb_no %> </td>
+				<td><%=@insurence.ins_amt %> </td>
+				<td><%=@insurence.ins_date %> </td>
+				<td><%=@insurence.no_of_years %>years </td>
+				
+			
+			</tr>
+				
+
+			</table>
+			<h4 class="text-left"><%=link_to 'go_back',lco_path(@lco.id) %></h4>
+	</div>
+</div>

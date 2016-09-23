@@ -1,0 +1,22 @@
+<div class="container" >
+	<div class="col-md-8 col-md-offset-2">
+		<h1>LCO LOGIN FORM </h1><hr/>
+        <%=form_for @login,url: { action: "login_check" } do |f| %>
+		<div class="form-group" >
+		<%=f.label :user_name %>
+		<%=f.text_field :user_name,class:'form-control' %>
+		</div>
+		<div class="form-group">
+		<%=f.label :mobile_no %>
+		<%=f.text_field :mobile_no,class:'form-control' %>
+		</div>
+
+		<div>
+	    <%=f.submit 'Login',class: 'btn btn-danger' %>
+		</div>
+
+        <h4 >click below link for signup </h4>
+		<h4 ><%=link_to 'sign_up',new_lco_path %></h4>
+		<%end %>
+	</div>
+</div>

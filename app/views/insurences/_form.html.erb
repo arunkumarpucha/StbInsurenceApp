@@ -1,0 +1,59 @@
+<%=form_for ([@subscriber,@insurence]) do |f| %>
+       
+         <% if @insurence.errors.any? %>
+            <div id="error_explanation">
+            <h2>
+            <%= pluralize(@insurence.errors.count, "error") %> prohibited
+            this insurence from being saved:
+            </h2>
+            <ul>
+            <% @insurence.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+            </ul>
+            </div>
+         <% end %>
+			<div class="form-group" >
+				<%=f.label :ins_amt %>
+                <%=f.text_field :ins_amt,class:'form-control' %>
+            </div>
+            <div class="form-group">
+            	<%=f.label :ins_date %>
+              
+            	<%=f.text_field :ins_date,'data-provide' => 'datepicker',class:'form-control datepicker' %> 
+            </div>
+            
+           <!-- <div class="form-group">
+                <label for ="ins_date"%>insurence_date</label>
+                <%#=date_field_tag :ins_date,nil,class:'form-control' %>
+            </div>
+            -->
+            <div class="form-group">
+            	<%=f.label :no_of_years %>
+            	<%=f.text_field :no_of_years,class:'form-control'%>
+            </div>
+
+            <div class="form-group">
+                <label for= "stb_no" >Stb_no</label>
+                <%=text_field_tag :stb_no,nil,class:'form-control'%>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model</label>
+<%=select_tag "model","<option>SELECT</option><option>INOVO</option><option>PENDRIVE</option>
+<option>ICEBOX</option>".html_safe,class:'form-control'%>
+            </div>
+            
+             <div class="form-group">
+                <label for="description">Description</label>
+                <%=text_area_tag :description,nil,class:'form-control'%>
+            </div>
+
+            
+           
+            <p>
+            <%=f.submit 'Apply' ,class: 'btn btn-success' %>
+            </p>
+        <%end%>
+
+       

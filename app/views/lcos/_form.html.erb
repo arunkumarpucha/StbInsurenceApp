@@ -1,0 +1,66 @@
+<%=form_for @lco do |f| %>
+       
+         <% if @lco.errors.any? %>
+            <div id="error_explanation">
+            <h2>
+            <%= pluralize(@lco.errors.count, "error") %> prohibited
+            this lco from being saved:
+            </h2>
+            <ul>
+            <% @lco.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+            </ul>
+            </div>
+         <% end %>
+			<div class="form-group" >
+				<%=f.label :mso_name %>
+                <%=f.text_field :mso_name,class:'form-control' %>
+            </div>
+            <div class="form-group">
+            	<%=f.label :lco_name %>
+            	<%=f.text_field :lco_name,class:'form-control' %>
+            </div>
+            <div class="form-group">
+            	<%=f.label :lco_code %>
+            	<%=f.text_field :lco_code,class:'form-control'%>
+            </div>
+             <div class="form-group">
+            	<%=f.label :mobile_no %>
+            	<%=f.text_field :mobile_no,class:'form-control'%>
+            </div>
+            <div class="form-group">
+            	<%=f.label :email_id %>
+            	<%=f.text_field :email_id,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="door_no"> door-no </label><br/>
+                <%=text_field_tag "door_no",nil,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="street_one"> streetname1 </label><br/>
+                <%=text_field_tag "street_one",nil,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="street_two"> streetname2 </label><br/>
+                <%=text_field_tag "street_two",nil,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="city"> city </label><br/>
+                <%=text_field_tag "city",nil,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="state"> state </label><br/>
+                <%=text_field_tag "state",nil,class:'form-control'%>
+            </div>
+            <div class="form-group">
+                <label for="country"> country </label><br/>
+                <%=text_field_tag "country",nil,class:'form-control'%>
+            </div>
+           
+            <p>
+            <%=f.submit 'register' ,class: 'btn btn-success' %>
+            </p>
+        <%end%>
+
+       

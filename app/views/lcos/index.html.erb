@@ -1,0 +1,26 @@
+<h1>Lcos#index</h1>
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<h4 class="text-right"><%=link_to 'create subscriber',new_lco_subscriber_path(@lco.id) %></h4>
+
+		<table class="table-bordered">
+			<tr>
+				<th>NAME</th>
+				<th>EMAIL_ID</th>
+				<th>MOBILE_NO</th>
+				<th>LCO_NAME</th>
+			</tr>
+			
+				<% @subscribers.each do |subscriber| %>
+			<tr>
+				<td><%=subscriber.name %> </td>
+				<td><%=subscriber.email_id %> </td>
+				<td><%=subscriber.mobile_no %> </td>
+				<td><%=@lco.lco_name %> </td>
+			</tr>
+				<% end %>
+
+			</table>
+	</div>
+</div>
+
